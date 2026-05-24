@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SG Headset | Premium Wireless Headphones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-white">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black sticky-top border-bottom border-secondary">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#home">SG Headset</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto text-center my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#collection">Collection</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="d-flex justify-content-center gap-3" id="navAuthSection">
+                    <div id="loggedOutLinks" class="d-flex gap-2">
+                        <button class="btn btn-outline-light btn-sm px-3" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                        <button class="btn btn-light btn-sm px-3" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+                    </div>
+                    <div id="loggedInLinks" class="d-none align-items-center gap-3">
+                        <a href="#" class="text-white position-relative fs-5" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+                            <i class="bi bi-bag"></i>
+                            <span id="cartCountBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger style-badge">0</span>
+                        </a>
+                        <a href="#orders" class="text-white fs-5" title="Orders" onclick="alert('Orders history coming soon!')"><i class="bi bi-box-seam"></i></a>
+                        <a href="#profile" class="text-white fs-5" title="Profile" onclick="logout()"><i class="bi bi-person-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section d-flex align-items-center py-5">
+        <div class="container">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+                <div class="col-lg-6 text-center text-lg-start mt-4 mt-lg-0">
+                    <h1 class="display-3 fw-bold text-uppercase mb-3 tracking-tight">Wireless<br><span class="text-secondary-subtle">Headphones</span></h1>
+                    <p class="text-secondary mb-4 leading-relaxed max-w-md mx-auto mx-lg-0">
+                        Experience premium sound with deep bass, crystal-clear audio, and all-day comfort. Designed for style and built for performance, our headphones deliver an immersive listening experience wherever life takes you.
+                    </p>
+                    <a href="#collection" class="btn btn-outline-light btn-lg rounded-0 px-4 py-2 text-uppercase fs-6">Explore Now</a>
+                </div>
+                <div class="col-lg-6 text-center position-relative">
+                    <img src="./images/best_budget_headphone-removebg-preview 1.png" alt="SG Headset Teal" class="img-fluid hero-img filter-teal">
+                    <!-- <div class="hero-reflection d-lg-block"></div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-secondary my-0">
+
+    <section id="about" class="about-section d-flex align-items-center py-5 bg-black">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center mb-4 mb-lg-0">
+                    <img src="./images/best_budget_headphone-removebg-preview 1.png" alt="SG Headset Bronze" class="img-fluid hero-img filter-bronze">
+                </div>
+                <div class="col-lg-6 text-center text-lg-start ps-lg-5">
+                    <h2 class="display-4 fw-bold text-uppercase mb-4">About Us</h2>
+                    <p class="text-secondary leading-relaxed mb-3">
+                        At our brand, we believe great sound is more than just listening — it's an experience. We create premium headphones that combine powerful audio, modern design, and everyday comfort to match your lifestyle.
+                    </p>
+                    <p class="text-secondary leading-relaxed">
+                        From deep bass and crystal-clear calls to long-lasting durability, every product is crafted to deliver performance you can feel in every beat. Our mission is simple: to make high-quality sound accessible, stylish, and unforgettable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-secondary my-0">
+
+    <section id="collection" class="py-5 bg-dark-smooth">
+        <div class="container py-4">
+            <h2 class="display-5 fw-bold text-uppercase text-center mb-5">Our Collection</h2>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card bg-black border-secondary h-100 product-card text-center p-3">
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" class="card-img-top filter-teal p-3 img-fluid item-img" alt="SG-Teal Pro">
+                        <div class="card-body d-flex flex-column justify-content-end">
+                            <h5 class="card-title fw-bold">SG-Teal Pro</h5>
+                            <p class="card-text text-secondary small">Deep Bass & Cyber-Teal Aesthetic</p>
+                            <h6 class="text-white mb-3">$189.00</h6>
+                            <button class="btn btn-light rounded-0 w-100 text-uppercase btn-add-cart" onclick="addToCart('SG-Teal Pro', 189.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card bg-black border-secondary h-100 product-card text-center p-3">
+                        <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=400&q=80" class="card-img-top filter-bronze p-3 img-fluid item-img" alt="SG-Bronze Luxe">
+                        <div class="card-body d-flex flex-column justify-content-end">
+                            <h5 class="card-title fw-bold">SG-Bronze Luxe</h5>
+                            <p class="card-text text-secondary small">Studio Sound & Metallic Comfort</p>
+                            <h6 class="text-white mb-3">$219.00</h6>
+                            <button class="btn btn-light rounded-0 w-100 text-uppercase btn-add-cart" onclick="addToCart('SG-Bronze Luxe', 219.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mx-auto">
+                    <div class="card bg-black border-secondary h-100 product-card text-center p-3">
+                        <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=400&q=80" class="card-img-top p-3 img-fluid item-img" alt="SG-Stealth Black">
+                        <div class="card-body d-flex flex-column justify-content-end">
+                            <h5 class="card-title fw-bold">SG-Stealth Black</h5>
+                            <p class="card-text text-secondary small">Pure Active Noise Cancellation</p>
+                            <h6 class="text-white mb-3">$249.00</h6>
+                            <button class="btn btn-light rounded-0 w-100 text-uppercase btn-add-cart" onclick="addToCart('SG-Stealth Black', 249.00)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-secondary my-0">
+
+    <section id="contact" class="py-5 bg-black">
+        <div class="container py-4">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 text-center">
+                    <h2 class="display-5 fw-bold text-uppercase mb-3">Get In Touch</h2>
+                    <p class="text-secondary mb-4">Have questions about your order or our headsets? Drop us a line.</p>
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully!'); this.reset();">
+                        <div class="mb-3">
+                            <input type="text" class="form-control bg-light border-secondary text-white rounded-0" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control bg-light border-secondary text-white rounded-0" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control bg-light border-secondary text-white rounded-0" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-outline-light rounded-0 px-5 text-uppercase btn-sm w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-4 border-top border-secondary text-center text-secondary small">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 SG Headset. Designed for mobile, built for performance.</p>
+        </div>
+    </footer>
+
+    <!-- --- MODALS & OFFCANVAS COMPONENTS --- -->
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary text-white rounded-0">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold text-uppercase">Login</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Email Address</label>
+                            <input type="email" id="loginEmail" class="form-control bg-black border-secondary text-white rounded-0" value="user@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Password</label>
+                            <input type="password" id="loginPassword" class="form-control bg-black border-secondary text-white rounded-0" value="password123" required>
+                        </div>
+                        <button type="submit" class="btn btn-light rounded-0 w-100 text-uppercase mt-2">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark border-secondary text-white rounded-0">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title fw-bold text-uppercase">Create Account</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Full Name</label>
+                            <input type="text" class="form-control bg-black border-secondary text-white rounded-0" placeholder="John Doe" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Email Address</label>
+                            <input type="email" class="form-control bg-black border-secondary text-white rounded-0" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-secondary small">Password</label>
+                            <input type="password" class="form-control bg-black border-secondary text-white rounded-0" placeholder="••••••••" required>
+                        </div>
+                        <button type="submit" class="btn btn-light rounded-0 w-100 text-uppercase mt-2">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end bg-dark border-start border-secondary text-white" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title fw-bold text-uppercase">Your Cart</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <div id="cartItemsList" class="overflow-y-auto mb-3">
+                <p class="text-secondary text-center my-5">Your cart is empty.</p>
+            </div>
+            <div class="border-top border-secondary pt-3">
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-secondary">Subtotal:</span>
+                    <span id="cartSubtotal" class="fw-bold fs-5">$0.00</span>
+                </div>
+                <button class="btn btn-light rounded-0 w-100 text-uppercase py-2 fw-bold" onclick="alert('Proceeding to simulated checkout...')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="appToast" class="toast bg-dark text-white border-secondary rounded-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+            <div class="toast-header bg-black text-white border-bottom border-secondary">
+                <strong class="me-auto text-uppercase tracking-wider fs-7" id="toastTitle">Notification</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-with="toast" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body" id="toastMessage">
+                Action performed successfully.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

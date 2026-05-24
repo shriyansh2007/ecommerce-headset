@@ -1,0 +1,82 @@
+/* Color Styling & Utility Fixes */
+.bg-dark-smooth {
+    background-color: #0b0b0b;
+}
+
+/* Custom Image Filters to exactly replicate provided reference image colors from Unsplash stock assets */
+.filter-teal {
+    filter: hue-rotate(140deg) brightness(0.8) contrast(1.1);
+}
+
+.filter-bronze {
+    filter: hue-rotate(330deg) sepia(0.6) saturate(1.3) brightness(0.6);
+}
+
+/* Micro Typography Layouts */
+.tracking-wider { letter-spacing: 0.15em; }
+.tracking-tight { letter-spacing: -0.03em; }
+.leading-relaxed { line-height: 1.65; }
+.fs-7 { font-size: 0.75rem; }
+
+.style-badge {
+    font-size: 0.6rem;
+    padding: 0.25em 0.45em;
+}
+
+/* --- Mobile-First Layout Core Defaults --- */
+.hero-section, .about-section {
+    min-height: auto;
+}
+
+.hero-img {
+    max-height: 280px;
+    object-fit: contain;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.item-img {
+    height: 180px;
+    object-fit: contain;
+}
+
+.product-card {
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+    border-color: #ffffff !important;
+}
+
+/* Desktop Enhancement Layout Layers (min-width: 992px) */
+@media (min-width: 992px) {
+    .hero-section, .about-section {
+        min-height: calc(100vh - 70px);
+    }
+    
+    .hero-img {
+        max-height: 480px;
+    }
+    
+    /* Mirror Reflection Design from reference image */
+    .hero-reflection {
+        content: "";
+        position: absolute;
+        bottom: -160px;
+        left: 50%;
+        transform: translateX(-50%) scaleY(-0.4);
+        width: 100%;
+        height: 100%;
+        background: inherit;
+        background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80');
+        background-repeat: no-repeat;
+        background-position: center;
+        filter: hue-rotate(140deg) brightness(0.3) blur(2px);
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 70%);
+        pointer-events: none;
+    }
+    
+    .max-w-md {
+        max-width: 440px;
+    }
+}
