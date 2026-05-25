@@ -1,6 +1,32 @@
-/* Color Styling & Utility Fixes */
+/* --- DESIGN TOKENS (CUSTOM VARIABLES) --- */
+:root {
+    /* Color Palette */
+    --bg-pure-black: #000000;
+    --bg-dark-smooth: #0b0b0b;
+    --bg-card-dark: #121212;
+    --border-color: #333333;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+
+    /* Typography & Spacing */
+    --tracking-wider: 0.15em;
+    --tracking-tight: -0.03em;
+    --leading-relaxed: 1.65;
+    --max-width-md: 440px;
+
+    /* Component Dimensions */
+    --hero-img-mobile: 280px;
+    --hero-img-desktop: 480px;
+    --item-img-height: 180px;
+
+    /* Animation Transitions */
+    --transition-smooth: 0.3s ease;
+    --transition-bounce: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- COLOR STYLING & UTILITY FIXES --- */
 .bg-dark-smooth {
-    background-color: #0b0b0b;
+    background-color: var(--bg-dark-smooth);
 }
 
 /* Custom Image Filters to exactly replicate provided reference image colors from Unsplash stock assets */
@@ -12,49 +38,61 @@
     filter: hue-rotate(330deg) sepia(0.6) saturate(1.3) brightness(0.6);
 }
 
-/* Micro Typography Layouts */
-.tracking-wider { letter-spacing: 0.15em; }
-.tracking-tight { letter-spacing: -0.03em; }
-.leading-relaxed { line-height: 1.65; }
-.fs-7 { font-size: 0.75rem; }
+/* --- MICRO TYPOGRAPHY LAYOUTS --- */
+.tracking-wider { 
+    letter-spacing: var(--tracking-wider); 
+}
+.tracking-tight { 
+    letter-spacing: var(--tracking-tight); 
+}
+.leading-relaxed { 
+    line-height: var(--leading-relaxed); 
+}
+.fs-7 { 
+    font-size: 0.75rem; 
+}
 
 .style-badge {
     font-size: 0.6rem;
     padding: 0.25em 0.45em;
 }
 
-/* --- Mobile-First Layout Core Defaults --- */
-.hero-section, .about-section {
+/* --- MOBILE-FIRST LAYOUT CORE DEFAULTS --- */
+.hero-section, 
+.about-section {
     min-height: auto;
 }
 
 .hero-img {
-    max-height: 280px;
+    max-height: var(--hero-img-mobile);
     object-fit: contain;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform var(--transition-bounce);
 }
 
 .item-img {
-    height: 180px;
+    height: var(--item-img-height);
     object-fit: contain;
 }
 
 .product-card {
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    background-color: var(--bg-card-dark) !important;
+    border-color: var(--border-color) !important;
+    transition: border-color var(--transition-smooth), transform var(--transition-smooth);
 }
 
 .product-card:hover {
-    border-color: #ffffff !important;
+    border-color: var(--text-primary) !important;
 }
 
-/* Desktop Enhancement Layout Layers (min-width: 992px) */
+/* --- DESKTOP ENHANCEMENT LAYOUT LAYERS (min-width: 992px) --- */
 @media (min-width: 992px) {
-    .hero-section, .about-section {
+    .hero-section, 
+    .about-section {
         min-height: calc(100vh - 70px);
     }
     
     .hero-img {
-        max-height: 480px;
+        max-height: var(--hero-img-desktop);
     }
     
     /* Mirror Reflection Design from reference image */
@@ -77,6 +115,6 @@
     }
     
     .max-w-md {
-        max-width: 440px;
+        max-width: var(--max-width-md);
     }
 }
